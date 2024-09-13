@@ -13,19 +13,27 @@ const Header = () => {
         <div>
           <ul className="flex items-center justify-between space-x-5">
             <li>
-              <Link href="/login">About us</Link>
+              <Link className="hover:text-primary" href="/login">
+                About us
+              </Link>
             </li>
             <li>
-              <Link href="/login">Admission</Link>
+              <Link className="hover:text-primary" href="/login">
+                Admission
+              </Link>
             </li>
             <li>
-              <Link href="/login">Gallery</Link>
+              <Link className="hover:text-primary" href="/login">
+                Gallery
+              </Link>
             </li>
             <li>
-              <Link href="/login">Contact</Link>
+              <Link className="hover:text-primary" href="/login">
+                Contact
+              </Link>
             </li>
             <li>
-              <Button asChild className="mr-4">
+              <Button size={"sm"} className="mr-4">
                 <Link href="/login">Login</Link>
               </Button>
             </li>
