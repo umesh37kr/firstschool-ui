@@ -4,7 +4,7 @@ import Link from "next/link";
 const Header = () => {
   return (
     <header className="bg-white">
-      <nav className="container flex items-center justify-between py-2">
+      <nav className="container flex items-center justify-between">
         <div>
           <Link href="/">
             <Image src={"/logo.png"} alt="logo" height={100} width={100} />
@@ -33,7 +33,7 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Button size={"sm"} className="mr-4">
+              <Button size={"sm"}>
                 <Link href="/login">Login</Link>
               </Button>
             </li>
