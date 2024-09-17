@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { MoveRight } from "lucide-react";
 import Image from "next/image";
 
 export default function Home() {
@@ -15,6 +16,9 @@ export default function Home() {
               A Place Where Young Hearts Grow, Minds Explore, and Futures Take
               Shape!
             </p>
+            <Button className="gap-2 rounded-full">
+              Get In Touch <MoveRight />
+            </Button>
           </div>
           <div className="flex items-center justify-center">
             <Image src={"/hero1.jpg"} alt="hero" width={600} height={600} />
