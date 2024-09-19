@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { MoveRight } from "lucide-react";
+import { MoveRight, School } from "lucide-react";
 import Image from "next/image";
 
 export default function Home() {
@@ -62,6 +62,44 @@ export default function Home() {
             />
           </div>
         </div>
+      </section>
+      {/* number banners */}
+      <section className="bg-cyan-700 my-6">
+        {/* <div className="container "> */}
+        <div className="grid grid-cols-4 gap-5">
+          <div className="py-10">
+            <School className="text-white h-11 w-11  stroke-white stroke-1 stroke-center" />
+            <h1 className="text-4xl font-bold text-center text-gray-200">
+              10+
+            </h1>
+            <p className="text-white text-center">Years of Experience</p>
+          </div>
+          <div className="py-10 bg-red-500">
+            <span className="items-center"></span>
+            <p className="text-center">
+              <School color="white" size={48} />
+            </p>
+            <h1 className="text-4xl font-bold text-center text-gray-200">
+              10+
+            </h1>
+            <p className="text-white text-center">Years of Experience</p>
+          </div>
+          <div className="py-10">
+            <School className="text-white h-11 w-11  stroke-white stroke-1 stroke-center" />
+            <h1 className="text-4xl font-bold text-center text-gray-200">
+              10+
+            </h1>
+            <p className="text-white text-center">Years of Experience</p>
+          </div>
+          <div className="py-10">
+            <School className="text-white h-11 w-11  stroke-white stroke-1 stroke-center" />
+            <h1 className="text-4xl font-bold text-center text-gray-200">
+              10+
+            </h1>
+            <p className="text-white text-center">Years of Experience</p>
+          </div>
+        </div>
+        {/* </div> */}
       </section>
     </>
   );
