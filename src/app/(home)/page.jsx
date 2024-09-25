@@ -72,7 +72,6 @@ export default function Home() {
       </section>
       {/* number banners */}
       <section className="bg-cyan-700">
-        {/* <div className="container "> */}
         <div className="grid grid-cols-4 gap-5">
           <div className="py-10">
             <div className="flex justify-center">
@@ -112,35 +111,16 @@ export default function Home() {
             <p className="text-white text-center">Number of Classes</p>
           </div>
         </div>
-        {/* <div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 1440 320"
-            className=""
-          >
-            <path
-              fill="#0099ff"
-              fill-opacity="1"
-              d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,42.7C672,32,768,32,864,42.7C960,53,1056,75,1152,69.3C1248,64,1344,32,1392,16L1440,0L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
-            ></path>
-          </svg>
-        </div> */}
-        {/* </div> */}
       </section>
-      <div className="-mt-8">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1440 320"
-          className="w-full"
-        >
-          <path
-            fill="#0e7490"
-            // fill="#0e7400"
-            fill-opacity="1"
-            d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,42.7C672,32,768,32,864,42.7C960,53,1056,75,1152,69.3C1248,64,1344,32,1392,16L1440,0L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
-          ></path>
-        </svg>
-      </div>
+      {/* video player */}
+      <section className="py-5 rounded-xl">
+        <div className="flex justify-center ">
+          <video width="600" autoplay loop muted controls>
+            <source src="school_video.mp4" type="video/mp4" />
+            Your browser does not support HTML video.
+          </video>
+        </div>
+      </section>
     </>
   );
 }
