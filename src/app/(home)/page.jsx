@@ -113,9 +113,16 @@ export default function Home() {
         </div>
       </section>
       {/* video player */}
-      <section className="py-5 rounded-xl">
-        <div className="flex justify-center ">
-          <video width="600" autoplay loop muted controls>
+      <section className="py-5 bg-[url('/video-bg.jpg')] bg-contain">
+        <div className="flex justify-center">
+          <video
+            className="rounded-lg"
+            width="600"
+            autoplay
+            loop
+            muted
+            controls
+          >
             <source src="school_video.mp4" type="video/mp4" />
             Your browser does not support HTML video.
           </video>
