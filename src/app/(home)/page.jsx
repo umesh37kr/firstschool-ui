@@ -128,9 +128,11 @@ export default function Home() {
           </video>
         </div>
       </section>
-      {/* Patient Testimonials */}
+      {/* parent Testimonials */}
       <section class="bg-heroBg text-center py-12 px-4">
-        <h2 class="text-2xl text-heading font-bold">Patient Testimonials</h2>
+        <h2 class="text-2xl text-heading font-bold">
+          Here's what Parents said
+        </h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-8 max-w-5xl mx-auto">
           <div class="p-4 shadow-lg rounded-lg text-heading bg-gray-200 hover:bg-gray-300 transition-colors">
             <p>
