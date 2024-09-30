@@ -128,6 +128,36 @@ export default function Home() {
           </video>
         </div>
       </section>
+      {/* Patient Testimonials */}
+      <section class="bg-heroBg text-center py-12 px-4">
+        <h2 class="text-2xl text-heading font-bold">Patient Testimonials</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-8 max-w-5xl mx-auto">
+          <div class="p-4 shadow-lg rounded-lg text-heading bg-gray-200 hover:bg-gray-300 transition-colors">
+            <p>
+              "हमने इस स्कूल को चुनकर सही निर्णय लिया है। यहाँ न केवल पढ़ाई पर
+              ध्यान दिया जाता है बल्कि बच्चों के व्यक्तिगत विकास पर भी बहुत
+              ध्यान दिया जाता है। शिक्षकों की मेहनत और प्रतिबद्धता अद्भुत है।"
+            </p>
+            <h3 class="mt-4 font-bold">- पवन कुमार</h3>
+          </div>
+          <div class="p-4 shadow-lg rounded-lg text-heading bg-gray-200 hover:bg-gray-300 transition-colors">
+            <p>
+              "इस स्कूल में आने के बाद मेरे बच्चे में आत्मविश्वास और अनुशासन में
+              बहुत सुधार हुआ है। यहाँ की सुविधाएँ और वातावरण बच्चों के सर्वांगीण
+              विकास के लिए बहुत उपयुक्त हैं।"
+            </p>
+            <h3 class="mt-4 font-bold">- अभिषेक मौर्य</h3>
+          </div>
+          <div class="p-4 shadow-lg rounded-lg text-heading bg-gray-200 hover:bg-gray-300 transition-colors">
+            <p>
+              "स्कूल का शिक्षण स्तर और यहाँ के शिक्षकों की मेहनत काबिल-ए-तारीफ
+              है। मेरा बच्चा यहाँ न केवल पढ़ाई में बेहतर कर रहा है, बल्कि अन्य
+              गतिविधियों में भी रुचि लेने लगा है। यह देख कर मैं बहुत खुश हूँ।"
+            </p>
+            <h3 class="mt-4 font-bold">- अंजलि शर्मा</h3>
+          </div>
+        </div>
+      </section>
       {/* contact us */}
       <section id="contact">
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-10">

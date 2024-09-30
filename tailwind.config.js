@@ -13,6 +13,7 @@ module.exports = {
         foreground: "hsl(var(--foreground))",
         heading: "hsl(var(--heading))",
         paragraph: "hsl(var(--paragraph))",
+        heroBg: "hsl(var(--hero-bg))",
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
