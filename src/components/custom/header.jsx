@@ -13,7 +13,7 @@ const Header = () => {
         <div>
           <ul className="flex items-center justify-between space-x-5">
             <li>
-              <Link className="hover:text-primary" href="/login">
+              <Link className="hover:text-primary" href="/about">
                 About us
               </Link>
             </li>
