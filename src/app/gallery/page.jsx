@@ -2,14 +2,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import { gallery } from "@/app/db/gallery.json";
-import Link from "next/link";
-import {
-  ArrowLeft,
-  ArrowRight,
-  ChevronLeft,
-  ChevronRight,
-  CircleX,
-} from "lucide-react";
+import { ChevronLeft, ChevronRight, CircleX } from "lucide-react";
 
 const Gallery = () => {
   const [selectedImg, setSelectedImg] = useState(0);
