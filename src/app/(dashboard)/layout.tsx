@@ -1,4 +1,5 @@
 import Menu from "@/components/dashboard/Menu";
+import Navbar from "@/components/dashboard/Navbar";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -20,8 +21,8 @@ export default function DashboardLayout({
         <Menu />
       </div>
       {/* right */}
-      <div className="w-[86%] bg-red-200 md:w-[92%] lg:w-[84%] xl:w-[86%]">
-        right
+      <div className="w-[86%] bg-[#F7F8FA] md:w-[92%] lg:w-[84%] xl:w-[86%]">
+        <Navbar />
       </div>
     </div>
   );
