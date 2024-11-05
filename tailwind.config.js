@@ -14,6 +14,12 @@ module.exports = {
         heading: "hsl(var(--heading))",
         paragraph: "hsl(var(--paragraph))",
         heroBg: "hsl(var(--hero-bg))",
+        lamaSky: "#C3EBFA",
+        lamaSkyLight: "#EDF9FD",
+        lamaPurple: "#CFCEFF",
+        lamaPurpleLight: "#F1F0FF",
+        lamaYellow: "#FAE27C",
+        lamaYellowLight: "#FEFCE8",
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
