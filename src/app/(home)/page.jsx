@@ -1,4 +1,8 @@
+"use client";
+import * as React from "react";
 import { Button } from "@/components/ui/button";
+import Autoplay from "embla-carousel-autoplay";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   Baby,
   BabyIcon,
@@ -19,13 +23,10 @@ import {
 
 const testimonials = [
   {
-    id: 1,
-    name: "- Priyanka Singh",
-    description: `Effective testimonials go beyond a simple quote that proclaims your greatness. They need to resonate with your target audience and the people who could also potentially benefit from the work you do in the future. The best testimonials tell a story with friction and resolution.`,
-  },
-  {
     id: 2,
     name: "- पवन कुमार",
+    avatar: "https://github.com/shadcn.png",
+    fallback: "PK",
     description: `"हमने इस स्कूल को चुनकर सही निर्णय लिया है। यहाँ न केवल
                       पढ़ाई पर ध्यान दिया जाता है बल्कि बच्चों के व्यक्तिगत
                       विकास पर भी बहुत ध्यान दिया जाता है। शिक्षकों की मेहनत और
@@ -34,6 +35,8 @@ const testimonials = [
   {
     id: 3,
     name: "- अभिषेक मौर्य",
+    avatar: "https://github.com/shadcn.png",
+    fallback: "AM",
     description: `"इस स्कूल में आने के बाद मेरे बच्चे में आत्मविश्वास और अनुशासन में
               बहुत सुधार हुआ है। यहाँ की सुविधाएँ और वातावरण बच्चों के सर्वांगीण
               विकास के लिए बहुत उपयुक्त हैं।"`,
@@ -41,12 +44,38 @@ const testimonials = [
   {
     id: 4,
     name: "- अंजलि शर्मा",
+    avatar: "https://github.com/shadcn.png",
+    fallback: "AS",
     description: `"स्कूल का शिक्षण स्तर और यहाँ के शिक्षकों की मेहनत काबिल-ए-तारीफ
               है। मेरा बच्चा यहाँ न केवल पढ़ाई में बेहतर कर रहा है, बल्कि अन्य
               गतिविधियों में भी रुचि लेने लगा है। यह देख कर मैं बहुत खुश हूँ।"`,
   },
+  {
+    id: 5,
+    name: "- Sujit Sah",
+    avatar: "ss",
+    fallback: "SS",
+    description: `"The school feels like an extended family. The open communication with teachers and the involvement in our child's learning journey make us feel secure and happy about our decision to enroll here. Highly recommended!"`,
+  },
+  {
+    id: 6,
+    name: "- Ranjeet Kumar",
+    avatar: "rk",
+    fallback: "RK",
+    description: `"The engaging curriculum and caring environment have made a world of difference for our child. We are amazed by the progress she has made in academics and character development. Kudos to the entire team!"`,
+  },
+  {
+    id: 7,
+    name: "- Suman",
+    avatar: "https://github.com/shadcn.png",
+    fallback: "S",
+    description: `"We are thrilled with the quality of education our child is receiving! The teachers are so nurturing, and the school truly fosters a love for learning. We couldn't have chosen a better place for our child to grow academically and socially."`,
+  },
 ];
 export default function Home() {
+  const plugin = React.useRef(
+    Autoplay({ delay: 3000, stopOnInteraction: false })
+  );
   return (
     <>
       <section className="" style={{ background: "#fff8e8" }}>
@@ -166,38 +195,49 @@ export default function Home() {
         </div>
       </section>
       {/* parent Testimonials */}
-      <section class="bg-heroBg flex items-start justify-center">
-        <h2 class="text-2xl text-heading font-bold">
-          Here's what Parents said
-        </h2>
-        <Carousel
-          opts={{
-            align: "start",
-          }}
-          className="w-full max-w-sm"
-          // className="w-full max-w-xs"
-        >
-          <CarouselContent>
-            {testimonials.map((item) => (
-              <CarouselItem key={item.id}>
-                <div className="p-1">
-                  <Card className="w-[300px]">
-                    <CardContent className="flex aspect-square items-center justify-center p-6">
-                      <span className="text-sm text-justify">
-                        {item.description}
-                      </span>
-                    </CardContent>
-                    <CardFooter className="flex justify-center">
-                      <p className="text-sm">{item.name}</p>
-                    </CardFooter>
-                  </Card>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
-        </Carousel>
+      <section class="bg-heroBg py-5">
+        <div>
+          <h2 class="text-2xl text-heading font-bold text-center py-5">
+            Here's what Parents said
+          </h2>
+        </div>
+        <div className="mx-auto max-w-xs">
+          <Carousel
+            opts={{
+              align: "start",
+            }}
+            plugins={[plugin.current]}
+            className="w-[950px] -ml-[300px] p-5"
+          >
+            <CarouselContent>
+              {testimonials.map((item) => (
+                <CarouselItem
+                  key={item.id}
+                  className="m-1 md:basis-1/2 lg:basis-1/3"
+                >
+                  <div className="">
+                    <Card className="min-h-56 w-[250]">
+                      <CardContent className="flex items-center justify-center py-6">
+                        <span className="text-sm text-justify">
+                          {item.description}
+                        </span>
+                      </CardContent>
+                      <CardFooter className="flex justify-center">
+                        <Avatar>
+                          <AvatarImage src={item.avatar} />
+                          <AvatarFallback>{item.fallback}</AvatarFallback>
+                        </Avatar>
+                        <p className=" ml-1">{item.name}</p>
+                      </CardFooter>
+                    </Card>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
+        </div>
       </section>
 
       {/* contact us */}
