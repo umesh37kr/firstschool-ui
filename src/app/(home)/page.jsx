@@ -53,14 +53,14 @@ const testimonials = [
   {
     id: 5,
     name: "- Sujit Sah",
-    avatar: "ss",
+    avatar: "",
     fallback: "SS",
     description: `"The school feels like an extended family. The open communication with teachers and the involvement in our child's learning journey make us feel secure and happy about our decision to enroll here. Highly recommended!"`,
   },
   {
     id: 6,
     name: "- Ranjeet Kumar",
-    avatar: "rk",
+    avatar: "",
     fallback: "RK",
     description: `"The engaging curriculum and caring environment have made a world of difference for our child. We are amazed by the progress she has made in academics and character development. Kudos to the entire team!"`,
   },
@@ -184,7 +184,7 @@ export default function Home() {
           <video
             className="rounded-lg"
             width="600"
-            autoplay
+            autoPlay
             loop
             muted
             controls
@@ -195,9 +195,9 @@ export default function Home() {
         </div>
       </section>
       {/* parent Testimonials */}
-      <section class="bg-heroBg py-5">
+      <section className="bg-heroBg py-5">
         <div>
-          <h2 class="text-2xl text-heading font-bold text-center py-5">
+          <h2 className="text-2xl text-heading font-bold text-center py-5">
             Here's what Parents said
           </h2>
         </div>
@@ -278,9 +278,9 @@ export default function Home() {
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                         className="h-6 w-6"
                       >
                         <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"></path>
@@ -306,9 +306,9 @@ export default function Home() {
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                         className="h-6 w-6"
                       >
                         <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2"></path>
@@ -335,9 +335,9 @@ export default function Home() {
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                         className="h-6 w-6"
                       >
                         <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"></path>
@@ -365,13 +365,13 @@ export default function Home() {
                     <div className="mx-0 mb-1 sm:mb-4">
                       <div className="mx-0 mb-1 sm:mb-4">
                         <label
-                          for="name"
+                          htmlFor="name"
                           className="pb-1 text-xs uppercase tracking-wider"
                         ></label>
                         <input
                           type="text"
                           id="name"
-                          autocomplete="given-name"
+                          autoComplete="given-name"
                           placeholder="Your name"
                           className="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md sm:mb-0"
                           name="name"
@@ -379,13 +379,13 @@ export default function Home() {
                       </div>
                       <div className="mx-0 mb-1 sm:mb-4">
                         <label
-                          for="email"
+                          htmlFor="email"
                           className="pb-1 text-xs uppercase tracking-wider"
                         ></label>
                         <input
                           type="email"
                           id="email"
-                          autocomplete="email"
+                          autoComplete="email"
                           placeholder="Your email address"
                           className="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md sm:mb-0"
                           name="email"
@@ -394,7 +394,7 @@ export default function Home() {
                     </div>
                     <div className="mx-0 mb-1 sm:mb-4">
                       <label
-                        for="textarea"
+                        htmlFor="textarea"
                         className="pb-1 text-xs uppercase tracking-wider"
                       ></label>
                       <textarea
