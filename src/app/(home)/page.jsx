@@ -8,7 +8,44 @@ import {
   Users,
 } from "lucide-react";
 import Image from "next/image";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
+const testimonials = [
+  {
+    id: 1,
+    name: "- Priyanka Singh",
+    description: `Effective testimonials go beyond a simple quote that proclaims your greatness. They need to resonate with your target audience and the people who could also potentially benefit from the work you do in the future. The best testimonials tell a story with friction and resolution.`,
+  },
+  {
+    id: 2,
+    name: "- पवन कुमार",
+    description: `"हमने इस स्कूल को चुनकर सही निर्णय लिया है। यहाँ न केवल
+                      पढ़ाई पर ध्यान दिया जाता है बल्कि बच्चों के व्यक्तिगत
+                      विकास पर भी बहुत ध्यान दिया जाता है। शिक्षकों की मेहनत और
+                      प्रतिबद्धता अद्भुत है।"`,
+  },
+  {
+    id: 3,
+    name: "- अभिषेक मौर्य",
+    description: `"इस स्कूल में आने के बाद मेरे बच्चे में आत्मविश्वास और अनुशासन में
+              बहुत सुधार हुआ है। यहाँ की सुविधाएँ और वातावरण बच्चों के सर्वांगीण
+              विकास के लिए बहुत उपयुक्त हैं।"`,
+  },
+  {
+    id: 4,
+    name: "- अंजलि शर्मा",
+    description: `"स्कूल का शिक्षण स्तर और यहाँ के शिक्षकों की मेहनत काबिल-ए-तारीफ
+              है। मेरा बच्चा यहाँ न केवल पढ़ाई में बेहतर कर रहा है, बल्कि अन्य
+              गतिविधियों में भी रुचि लेने लगा है। यह देख कर मैं बहुत खुश हूँ।"`,
+  },
+];
 export default function Home() {
   return (
     <>
@@ -129,37 +166,40 @@ export default function Home() {
         </div>
       </section>
       {/* parent Testimonials */}
-      <section class="bg-heroBg text-center py-12 px-4">
+      <section class="bg-heroBg flex items-start justify-center">
         <h2 class="text-2xl text-heading font-bold">
           Here's what Parents said
         </h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-8 max-w-5xl mx-auto">
-          <div class="p-4 font-semibold shadow-lg rounded-lg text-heading bg-rose-300 hover:bg-rose-400 transition-colors">
-            <p>
-              "हमने इस स्कूल को चुनकर सही निर्णय लिया है। यहाँ न केवल पढ़ाई पर
-              ध्यान दिया जाता है बल्कि बच्चों के व्यक्तिगत विकास पर भी बहुत
-              ध्यान दिया जाता है। शिक्षकों की मेहनत और प्रतिबद्धता अद्भुत है।"
-            </p>
-            <h3 class="mt-4 font-bold">- पवन कुमार</h3>
-          </div>
-          <div class="p-4 font-semibold shadow-lg rounded-lg text-heading bg-rose-300 hover:bg-rose-400 transition-colors">
-            <p>
-              "इस स्कूल में आने के बाद मेरे बच्चे में आत्मविश्वास और अनुशासन में
-              बहुत सुधार हुआ है। यहाँ की सुविधाएँ और वातावरण बच्चों के सर्वांगीण
-              विकास के लिए बहुत उपयुक्त हैं।"
-            </p>
-            <h3 class="mt-4 font-bold">- अभिषेक मौर्य</h3>
-          </div>
-          <div class="p-4 font-semibold shadow-lg rounded-lg text-heading bg-rose-300 hover:bg-rose-400 transition-colors">
-            <p>
-              "स्कूल का शिक्षण स्तर और यहाँ के शिक्षकों की मेहनत काबिल-ए-तारीफ
-              है। मेरा बच्चा यहाँ न केवल पढ़ाई में बेहतर कर रहा है, बल्कि अन्य
-              गतिविधियों में भी रुचि लेने लगा है। यह देख कर मैं बहुत खुश हूँ।"
-            </p>
-            <h3 class="mt-4 font-bold">- अंजलि शर्मा</h3>
-          </div>
-        </div>
+        <Carousel
+          opts={{
+            align: "start",
+          }}
+          className="w-full max-w-sm"
+          // className="w-full max-w-xs"
+        >
+          <CarouselContent>
+            {testimonials.map((item) => (
+              <CarouselItem key={item.id}>
+                <div className="p-1">
+                  <Card className="w-[300px]">
+                    <CardContent className="flex aspect-square items-center justify-center p-6">
+                      <span className="text-sm text-justify">
+                        {item.description}
+                      </span>
+                    </CardContent>
+                    <CardFooter className="flex justify-center">
+                      <p className="text-sm">{item.name}</p>
+                    </CardFooter>
+                  </Card>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
       </section>
+
       {/* contact us */}
       <section id="contact">
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-10">
