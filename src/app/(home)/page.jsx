@@ -216,13 +216,13 @@ export default function Home() {
                   className="m-1 md:basis-1/2 lg:basis-1/3"
                 >
                   <div className="">
-                    <Card className="min-h-56 w-[250]">
+                    <Card className="min-h-80">
                       <CardContent className="flex items-center justify-center py-6">
-                        <span className="text-sm text-justify">
+                        <span className="leading-relaxed text-paragraph text-justify">
                           {item.description}
                         </span>
                       </CardContent>
-                      <CardFooter className="flex justify-center">
+                      <CardFooter className="flex justify-start">
                         <Avatar>
                           <AvatarImage src={item.avatar} />
                           <AvatarFallback>{item.fallback}</AvatarFallback>
