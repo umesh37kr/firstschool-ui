@@ -79,7 +79,7 @@ export default function Home() {
   return (
     <>
       <section className="" style={{ background: "#fff8e8" }}>
-        <div className="container flex items-center justify-center">
+        <div className="container flex flex-col-reverse pb-2 md:flex-row items-center justify-center">
           <div>
             <h1 className="text-6xl text-heading">
               We Prepare Your <br />
