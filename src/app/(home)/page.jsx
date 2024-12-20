@@ -100,9 +100,11 @@ export default function Home() {
       </section>
       {/* About school */}
       <section>
-        <div className="container py-5 flex items-center justify-center">
+        <div className="container pb-5 flex flex-col md:flex-row items-center justify-center">
           <div>
-            <h3 className="italic text-primary font-semibold">Welcome to</h3>
+            <h3 className="italic text-primary font-semibold mt-4 md:mt-2">
+              Welcome to
+            </h3>
             <h1 className="text-xl font-semibold text-heading">
               First School International, Garhwa
             </h1>
@@ -125,7 +127,7 @@ export default function Home() {
               personal growth.
             </p>
           </div>
-          <div className="flex items-center justify-center pl-5 mt-20">
+          <div className="flex items-center justify-center pl-5 mt-5 md:mt-20">
             <Image
               src={"/school-building.jpg"}
               alt="school-building"
@@ -138,41 +140,43 @@ export default function Home() {
       </section>
       {/* number banners */}
       <section className="bg-cyan-700">
-        <div className="grid grid-cols-4 gap-5">
-          <div className="py-10">
+        <div className="grid grid-cols-2 py-5 sm:grid-cols-2 lg:grid-cols-4 gap-5 px-4">
+          <div className="py-1 md:py-10">
             <div className="flex justify-center">
-              <BookOpenCheck className="text-white h-11 w-11  stroke-white stroke-1 stroke-center" />
+              <BookOpenCheck className="text-white h-11 w-11 stroke-white stroke-1" />
             </div>
-            <h1 className="text-4xl font-bold text-center text-gray-200 py-2">
+            <h1 className="text-3xl md:text-4xl font-bold text-center text-gray-200 py-2">
               10+
             </h1>
             <p className="text-white text-center">Years of Experience</p>
           </div>
-          <div className="py-10">
-            <span className="items-center"></span>
+
+          <div className="py-1 md:py-10">
             <div className="flex justify-center">
-              <Users className="text-white h-11 w-11  stroke-white stroke-1 stroke-center" />
+              <Users className="text-white h-11 w-11 stroke-white stroke-1" />
             </div>
-            <h1 className="text-4xl font-bold text-center text-gray-200 py-2">
-              15+
+            <h1 className="text-3xl md:text-4xl font-bold text-center text-gray-200 py-2">
+              30+
             </h1>
             <p className="text-white text-center">Experts Instructors</p>
           </div>
-          <div className="py-10 ">
+
+          <div className="py-1 md:py-10">
             <div className="flex justify-center">
-              <Baby className="text-white h-11 w-11  stroke-white stroke-1 stroke-center" />
+              <Baby className="text-white h-11 w-11 stroke-white stroke-1" />
             </div>
-            <h1 className="text-4xl font-bold text-center text-gray-200 py-2">
-              1200+
+            <h1 className="text-3xl md:text-4xl font-bold text-center text-gray-200 py-2">
+              2500+
             </h1>
             <p className="text-white text-center">Students Enrolled</p>
           </div>
-          <div className="py-10">
+
+          <div className="py-1 md:py-10">
             <div className="flex justify-center">
-              <School className="text-white h-11 w-11  stroke-white stroke-1 stroke-center" />
+              <School className="text-white h-11 w-11 stroke-white stroke-1" />
             </div>
-            <h1 className="text-4xl font-bold text-center text-gray-200 py-2">
-              25+
+            <h1 className="text-3xl md:text-4xl font-bold text-center text-gray-200 py-2">
+              40+
             </h1>
             <p className="text-white text-center">Number of Classes</p>
           </div>
@@ -180,7 +184,7 @@ export default function Home() {
       </section>
       {/* video player */}
       <section className="py-5 bg-[url('/video-bg.jpg')] bg-contain">
-        <div className="flex justify-center">
+        <div className="container flex justify-center">
           <video
             className="rounded-lg"
             width="600"
