@@ -1,81 +1,59 @@
 "use client";
 import * as React from "react";
 import { Button } from "@/components/ui/button";
-import Autoplay from "embla-carousel-autoplay";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import {
-  Baby,
-  BabyIcon,
-  BookOpenCheck,
-  MoveRight,
-  School,
-  Users,
-} from "lucide-react";
+import { Baby, BookOpenCheck, MoveRight, School, Users } from "lucide-react";
 import Image from "next/image";
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
 
 const testimonials = [
   {
+    id: 1,
+    description: "The school has a fantastic curriculum and amazing staff!",
+    avatar: "/hero1.jpg",
+    name: "Pawan Kumar",
+  },
+  {
     id: 2,
-    name: "- पवन कुमार",
-    avatar: "https://github.com/shadcn.png",
-    fallback: "PK",
+    description:
+      "My child loves going to school every day. Highly recommended!",
+    avatar: "/hero1.jpg",
+    name: "Jane Smith",
+  },
+  {
+    id: 3,
+    description: "Great focus on academics and extracurricular activities.",
+    avatar: "/hero1.jpg",
+    name: "Rakesh Sharma",
+  },
+  {
+    id: 4,
+    description:
+      "We’ve seen incredible growth in our child’s confidence and skills.",
+    avatar: "/avatar4.jpg",
+    name: "Anjali Mishra",
+  },
+  {
+    id: 5,
+    name: "Sujeet Sah",
+    avatar: "/hero1.jpg",
     description: `"हमने इस स्कूल को चुनकर सही निर्णय लिया है। यहाँ न केवल
                       पढ़ाई पर ध्यान दिया जाता है बल्कि बच्चों के व्यक्तिगत
                       विकास पर भी बहुत ध्यान दिया जाता है। शिक्षकों की मेहनत और
                       प्रतिबद्धता अद्भुत है।"`,
   },
   {
-    id: 3,
+    id: 6,
     name: "- अभिषेक मौर्य",
-    avatar: "https://github.com/shadcn.png",
-    fallback: "AM",
+    avatar: "/hero1.jpg",
     description: `"इस स्कूल में आने के बाद मेरे बच्चे में आत्मविश्वास और अनुशासन में
               बहुत सुधार हुआ है। यहाँ की सुविधाएँ और वातावरण बच्चों के सर्वांगीण
               विकास के लिए बहुत उपयुक्त हैं।"`,
   },
-  {
-    id: 4,
-    name: "- अंजलि शर्मा",
-    avatar: "https://github.com/shadcn.png",
-    fallback: "AS",
-    description: `"स्कूल का शिक्षण स्तर और यहाँ के शिक्षकों की मेहनत काबिल-ए-तारीफ
-              है। मेरा बच्चा यहाँ न केवल पढ़ाई में बेहतर कर रहा है, बल्कि अन्य
-              गतिविधियों में भी रुचि लेने लगा है। यह देख कर मैं बहुत खुश हूँ।"`,
-  },
-  {
-    id: 5,
-    name: "- Sujit Sah",
-    avatar: "",
-    fallback: "SS",
-    description: `"The school feels like an extended family. The open communication with teachers and the involvement in our child's learning journey make us feel secure and happy about our decision to enroll here. Highly recommended!"`,
-  },
-  {
-    id: 6,
-    name: "- Ranjeet Kumar",
-    avatar: "",
-    fallback: "RK",
-    description: `"The engaging curriculum and caring environment have made a world of difference for our child. We are amazed by the progress she has made in academics and character development. Kudos to the entire team!"`,
-  },
-  {
-    id: 7,
-    name: "- Suman",
-    avatar: "https://github.com/shadcn.png",
-    fallback: "S",
-    description: `"We are thrilled with the quality of education our child is receiving! The teachers are so nurturing, and the school truly fosters a love for learning. We couldn't have chosen a better place for our child to grow academically and socially."`,
-  },
 ];
 export default function Home() {
-  const plugin = React.useRef(
-    Autoplay({ delay: 3000, stopOnInteraction: false })
-  );
   return (
     <>
       <section className="" style={{ background: "#fff8e8" }}>
@@ -202,47 +180,50 @@ export default function Home() {
       <section className="bg-heroBg py-5">
         <div>
           <h2 className="text-2xl text-heading font-bold text-center py-5">
-            Here's what Parents said
+            Here's what Parents say
           </h2>
         </div>
-        <div className="mx-auto max-w-xs">
-          <Carousel
-            opts={{
-              align: "start",
-            }}
-            plugins={[plugin.current]}
-            className="w-[950px] -ml-[300px] p-5"
-          >
-            <CarouselContent>
-              {testimonials.map((item) => (
-                <CarouselItem
-                  key={item.id}
-                  className="m-1 md:basis-1/2 lg:basis-1/3"
-                >
-                  <div className="">
-                    <Card className="min-h-80">
-                      <CardContent className="flex items-center justify-center py-6">
-                        <span className="leading-relaxed text-paragraph text-justify">
-                          {item.description}
-                        </span>
-                      </CardContent>
-                      <CardFooter className="flex justify-start">
-                        <Avatar>
-                          <AvatarImage src={item.avatar} />
-                          <AvatarFallback>{item.fallback}</AvatarFallback>
-                        </Avatar>
-                        <p className=" ml-1">{item.name}</p>
-                      </CardFooter>
-                    </Card>
+        <div className="py-10">
+          <div className="mx-auto max-w-7xl px-4">
+            <Swiper
+              modules={[Autoplay, Pagination]}
+              autoplay={{
+                delay: 3000,
+                disableOnInteraction: false,
+              }}
+              pagination={{ clickable: true }}
+              spaceBetween={20}
+              breakpoints={{
+                640: { slidesPerView: 1 }, // 1 card for smaller screens
+                1024: { slidesPerView: 3 }, // 3 cards for larger screens
+              }}
+              className="w-full"
+            >
+              {testimonials.map((testimonial) => (
+                <SwiperSlide key={testimonial.id}>
+                  <div className="bg-white rounded-lg shadow-lg p-6 h-full">
+                    <div className="flex flex-col items-center">
+                      <Image
+                        src={testimonial.avatar}
+                        alt={`${testimonial.name}'s avatar`}
+                        width={80}
+                        height={80}
+                        className="rounded-full mb-4"
+                      />
+                      <p className="leading-relaxed text-paragraph text-justify mb-4">
+                        {testimonial.description}
+                      </p>
+                      <h4 className="text-lg font-bold">{testimonial.name}</h4>
+                    </div>
                   </div>
-                </CarouselItem>
+                </SwiperSlide>
               ))}
-            </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
-          </Carousel>
+            </Swiper>
+          </div>
         </div>
       </section>
+
+      {/* slider swiper js */}
 
       {/* contact us */}
       <section id="contact">
