@@ -1,6 +1,52 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    mobile: "",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // Prevent page reload
+    setIsSubmitting(true);
+    try {
+      console.log(formData);
+      const response = await fetch("http://localhost:4000/api/contact/create", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        alert("Message sent successfully!");
+        setFormData({
+          name: "",
+          mobile: "",
+          message: "",
+        });
+      } else {
+        alert("Failed to send message.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("An error occurred. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   return (
     <>
       <section id="contact">
@@ -122,7 +168,7 @@ const Contact = () => {
                 <h2 className="mb-4 text-2xl font-bold text-heading">
                   Ready to Get Started?
                 </h2>
-                <form id="contactForm">
+                <form id="contactForm" onSubmit={handleSubmit}>
                   <div className="mb-6">
                     <div className="mx-0 mb-1 sm:mb-4">
                       <div className="mx-0 mb-1 sm:mb-4">
@@ -137,35 +183,44 @@ const Contact = () => {
                           placeholder="Your name"
                           className="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md sm:mb-0"
                           name="name"
+                          value={formData.name}
+                          onChange={handleChange}
+                          required
                         />
                       </div>
                       <div className="mx-0 mb-1 sm:mb-4">
                         <label
-                          for="email"
+                          for="mobile"
                           className="pb-1 text-xs uppercase tracking-wider"
                         ></label>
                         <input
-                          type="email"
-                          id="email"
-                          autocomplete="email"
-                          placeholder="Your email address"
+                          type="mobile"
+                          id="mobile"
+                          autocomplete="mobile"
+                          placeholder="Your mobile number"
                           className="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md sm:mb-0"
-                          name="email"
+                          name="mobile"
+                          value={formData.mobile}
+                          onChange={handleChange}
+                          required
                         />
                       </div>
                     </div>
                     <div className="mx-0 mb-1 sm:mb-4">
                       <label
-                        for="textarea"
+                        for="message"
                         className="pb-1 text-xs uppercase tracking-wider"
                       ></label>
                       <textarea
-                        id="textarea"
-                        name="textarea"
+                        id="message"
+                        name="message"
                         cols="30"
                         rows="5"
                         placeholder="Write your message..."
                         className="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md sm:mb-0"
+                        value={formData.message}
+                        onChange={handleChange}
+                        required
                       ></textarea>
                     </div>
                   </div>
