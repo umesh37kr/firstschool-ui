@@ -1,7 +1,9 @@
 "use client";
+import { useToast } from "@/hooks/use-toast";
 import React, { useState } from "react";
 
 const Contact = () => {
+  const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
     mobile: "",
@@ -31,18 +33,27 @@ const Contact = () => {
       });
 
       if (response.ok) {
-        alert("Message sent successfully!");
+        toast({
+          className: "bg-green-300",
+          description: "Your message has been sent.",
+        });
         setFormData({
           name: "",
           mobile: "",
           message: "",
         });
       } else {
-        alert("Failed to send message.");
+        toast({
+          variant: "destructive",
+          description: "something went wrong. Try again..",
+        });
       }
     } catch (error) {
       console.error("Error:", error);
-      alert("An error occurred. Please try again.");
+      toast({
+        variant: "destructive",
+        description: "something went wrong. Try again..",
+      });
     } finally {
       setIsSubmitting(false);
     }

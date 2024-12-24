@@ -1,5 +1,6 @@
 "use client";
-import * as React from "react";
+import { useToast } from "@/hooks/use-toast";
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Baby, BookOpenCheck, MoveRight, School, Users } from "lucide-react";
 import Image from "next/image";
@@ -54,6 +55,61 @@ const testimonials = [
   },
 ];
 export default function Home() {
+  const { toast } = useToast();
+  const [formData, setFormData] = useState({
+    name: "",
+    mobile: "",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // Prevent page reload
+    setIsSubmitting(true);
+    try {
+      console.log(formData);
+      const response = await fetch("http://localhost:4000/api/contact/create", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        toast({
+          className: "bg-green-300",
+          description: "Your message has been sent.",
+        });
+        setFormData({
+          name: "",
+          mobile: "",
+          message: "",
+        });
+      } else {
+        toast({
+          variant: "destructive",
+          description: "something went wrong. Try again..",
+        });
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      toast({
+        variant: "destructive",
+        description: "something went wrong. Try again..",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   return (
     <>
       <section className="" style={{ background: "#fff8e8" }}>
@@ -263,9 +319,9 @@ export default function Home() {
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
                         className="h-6 w-6"
                       >
                         <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"></path>
@@ -291,9 +347,9 @@ export default function Home() {
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
                         className="h-6 w-6"
                       >
                         <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2"></path>
@@ -320,9 +376,9 @@ export default function Home() {
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
                         className="h-6 w-6"
                       >
                         <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"></path>
@@ -345,50 +401,59 @@ export default function Home() {
                 <h2 className="mb-4 text-2xl font-bold text-heading">
                   Ready to Get Started?
                 </h2>
-                <form id="contactForm">
+                <form id="contactForm" onSubmit={handleSubmit}>
                   <div className="mb-6">
                     <div className="mx-0 mb-1 sm:mb-4">
                       <div className="mx-0 mb-1 sm:mb-4">
                         <label
-                          htmlFor="name"
+                          for="name"
                           className="pb-1 text-xs uppercase tracking-wider"
                         ></label>
                         <input
                           type="text"
                           id="name"
-                          autoComplete="given-name"
+                          autocomplete="given-name"
                           placeholder="Your name"
                           className="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md sm:mb-0"
                           name="name"
+                          value={formData.name}
+                          onChange={handleChange}
+                          required
                         />
                       </div>
                       <div className="mx-0 mb-1 sm:mb-4">
                         <label
-                          htmlFor="email"
+                          for="mobile"
                           className="pb-1 text-xs uppercase tracking-wider"
                         ></label>
                         <input
-                          type="email"
-                          id="email"
-                          autoComplete="email"
-                          placeholder="Your email address"
+                          type="mobile"
+                          id="mobile"
+                          autocomplete="mobile"
+                          placeholder="Your mobile number"
                           className="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md sm:mb-0"
-                          name="email"
+                          name="mobile"
+                          value={formData.mobile}
+                          onChange={handleChange}
+                          required
                         />
                       </div>
                     </div>
                     <div className="mx-0 mb-1 sm:mb-4">
                       <label
-                        htmlFor="textarea"
+                        for="message"
                         className="pb-1 text-xs uppercase tracking-wider"
                       ></label>
                       <textarea
-                        id="textarea"
-                        name="textarea"
+                        id="message"
+                        name="message"
                         cols="30"
                         rows="5"
                         placeholder="Write your message..."
                         className="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md sm:mb-0"
+                        value={formData.message}
+                        onChange={handleChange}
+                        required
                       ></textarea>
                     </div>
                   </div>
