@@ -48,7 +48,7 @@ const testimonials = [
   {
     id: 6,
     name: "- Payal",
-    avatar: "/profile_pic_10.avif",
+    avatar: "/profile_pic_16.avif",
     description: `"इस स्कूल में आने के बाद मेरे बच्चे में आत्मविश्वास और अनुशासन में
               बहुत सुधार हुआ है। यहाँ की सुविधाएँ और वातावरण बच्चों के सर्वांगीण
               विकास के लिए बहुत उपयुक्त हैं।"`,
@@ -264,7 +264,7 @@ export default function Home() {
                         alt={`${testimonial.name}'s avatar`}
                         width={80}
                         height={80}
-                        className="rounded-full mb-4"
+                        className="rounded-full object-cover aspect-square mb-4"
                       />
                       <p className="leading-relaxed text-paragraph text-justify mb-4">
                         {testimonial.description}
