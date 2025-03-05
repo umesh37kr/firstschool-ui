@@ -13,33 +13,33 @@ const testimonials = [
   {
     id: 1,
     description: "The school has a fantastic curriculum and amazing staff!",
-    avatar: "/hero1.jpg",
+    avatar: "/profile_pic_19.avif",
     name: "Pawan Kumar",
   },
   {
     id: 2,
     description:
       "My child loves going to school every day. Highly recommended!",
-    avatar: "/hero1.jpg",
+    avatar: "/profile_pic_13.avif",
     name: "Jane Smith",
   },
   {
     id: 3,
     description: "Great focus on academics and extracurricular activities.",
-    avatar: "/hero1.jpg",
-    name: "Rakesh Sharma",
+    avatar: "/profile_pic_10.avif",
+    name: "Neha Sharma",
   },
   {
     id: 4,
     description:
       "We’ve seen incredible growth in our child’s confidence and skills.",
-    avatar: "/avatar4.jpg",
+    avatar: "/profile_pic_20.avif",
     name: "Anjali Mishra",
   },
   {
     id: 5,
     name: "Sujeet Sah",
-    avatar: "/hero1.jpg",
+    avatar: "/profile_pic_18.avif",
     description: `"हमने इस स्कूल को चुनकर सही निर्णय लिया है। यहाँ न केवल
                       पढ़ाई पर ध्यान दिया जाता है बल्कि बच्चों के व्यक्तिगत
                       विकास पर भी बहुत ध्यान दिया जाता है। शिक्षकों की मेहनत और
@@ -47,8 +47,8 @@ const testimonials = [
   },
   {
     id: 6,
-    name: "- अभिषेक मौर्य",
-    avatar: "/hero1.jpg",
+    name: "- Payal",
+    avatar: "/profile_pic_10.avif",
     description: `"इस स्कूल में आने के बाद मेरे बच्चे में आत्मविश्वास और अनुशासन में
               बहुत सुधार हुआ है। यहाँ की सुविधाएँ और वातावरण बच्चों के सर्वांगीण
               विकास के लिए बहुत उपयुक्त हैं।"`,
