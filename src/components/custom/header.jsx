@@ -64,7 +64,15 @@ const Header = () => {
       {/* Mobile Navigation */}
       {isMobileMenuOpen && (
         <nav className="md:hidden bg-white shadow-lg">
-          <ul className="flex flex-col items-start p-4 space-y-4 text-heading">
+          <ul
+            className="flex flex-col items-start p-4 space-y-4 text-heading"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            <li>
+              <Link className="hover:text-primary" href="/">
+                Home
+              </Link>
+            </li>
             <li>
               <Link className="hover:text-primary" href="/about">
                 About us
