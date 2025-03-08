@@ -4,7 +4,7 @@ import React from "react";
 const About = () => {
   return (
     <>
-      <section className="container py-5 min-h-full">
+      <section className="container bg-[#fcf9f9] py-5 min-h-full">
         <div className="conatiner block">
           <h1 className="text-cyan-800 text-center text-pretty text-3xl font-semibold">
             Message from the Principal

@@ -61,7 +61,7 @@ const Contact = () => {
   return (
     <>
       <section id="contact">
-        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-10">
+        <div className="mx-auto bg-[#fcf9f9] max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-10">
           <div className="mb-4">
             <div className="mb-6 max-w-3xl text-center sm:text-center md:mx-auto md:mb-12">
               <p className="text-base font-semibold uppercase tracking-wide text-heading">

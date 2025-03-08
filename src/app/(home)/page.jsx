@@ -134,7 +134,7 @@ export default function Home() {
       </section>
       {/* About school */}
       <section>
-        <div className="container pb-5 flex flex-col md:flex-row items-center justify-center">
+        <div className="container bg-[#fcf9f9] pb-5 flex flex-col md:flex-row items-center justify-center">
           <div>
             <h3 className="italic text-primary font-semibold mt-4 md:mt-2">
               Welcome to
@@ -269,7 +269,9 @@ export default function Home() {
                       <p className="leading-relaxed text-paragraph text-justify mb-4">
                         {testimonial.description}
                       </p>
-                      <h4 className="text-lg font-bold">{testimonial.name}</h4>
+                      <h4 className="text-lg text-heading font-bold">
+                        {testimonial.name}
+                      </h4>
                     </div>
                   </div>
                 </SwiperSlide>
@@ -283,7 +285,7 @@ export default function Home() {
 
       {/* contact us */}
       <section id="contact">
-        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-10">
+        <div className="mx-auto bg-[#fcf9f9] max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-10">
           <div className="mb-4">
             <div className="mb-6 max-w-3xl text-center sm:text-center md:mx-auto md:mb-12">
               <p className="text-base font-semibold uppercase tracking-wide text-heading">
