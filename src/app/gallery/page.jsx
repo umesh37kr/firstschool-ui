@@ -19,7 +19,7 @@ const Gallery = () => {
   };
   return (
     <>
-      <div className="flex flex-wrap items-center justify-center mt-10">
+      <div className="flex flex-wrap items-center justify-center pt-5 pb-5 bg-slate-100">
         {gallery.map((img, index) => (
           <a
             onClick={() => {

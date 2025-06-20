@@ -3,8 +3,8 @@ import Link from "next/link";
 
 const Login = () => {
   return (
-    <div className="flex justify-center items-center h-56">
-      <h1>
+    <div className="flex justify-center items-center h-56 bg-slate-100">
+      <h1 className="text-heading">
         Please{" "}
         <Link
           target="_blank"

@@ -4,7 +4,7 @@ import React from "react";
 const Admissions = () => {
   return (
     <>
-      <section>
+      <section className="container mx-auto px-4 py-10 bg-slate-100">
         <h1 className="mt-5 text-center text-2xl text-heading">
           Admission is closed now!
         </h1>

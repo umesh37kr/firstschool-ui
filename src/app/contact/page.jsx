@@ -192,7 +192,7 @@ const Contact = () => {
                           id="name"
                           autocomplete="given-name"
                           placeholder="Your name"
-                          className="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md sm:mb-0"
+                          className="mb-2 w-full rounded-md border text-gray-700 border-gray-400 py-2 pl-2 pr-4 shadow-md sm:mb-0"
                           name="name"
                           value={formData.name}
                           onChange={handleChange}
@@ -209,7 +209,7 @@ const Contact = () => {
                           id="mobile"
                           autocomplete="mobile"
                           placeholder="Your mobile number"
-                          className="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md sm:mb-0"
+                          className="mb-2 w-full rounded-md border text-gray-700 border-gray-400 py-2 pl-2 pr-4 shadow-md sm:mb-0"
                           name="mobile"
                           value={formData.mobile}
                           onChange={handleChange}
@@ -228,7 +228,7 @@ const Contact = () => {
                         cols="30"
                         rows="5"
                         placeholder="Write your message..."
-                        className="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md sm:mb-0"
+                        className="mb-2 w-full rounded-md border text-gray-700 border-gray-400 py-2 pl-2 pr-4 shadow-md sm:mb-0"
                         value={formData.message}
                         onChange={handleChange}
                         required
