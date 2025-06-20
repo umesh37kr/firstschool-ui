@@ -1,0 +1,48 @@
+name: Deploy to EC2
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 22
+
+      - name: Build Project
+        run: |
+          npm install
+          npm run build
+
+      - name: Copy project to EC2
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ubuntu
+          key: ${{ secrets.EC2_SSH_KEY }}
+          port: ${{ secrets.EC2_PORT }}
+          source: "."
+          target: ${{ secrets.EC2_PROJECT_DIR }}
+
+      - name: Restart App on EC2
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ubuntu
+          key: ${{ secrets.EC2_SSH_KEY }}
+          port: ${{ secrets.EC2_PORT }}
+          script: |
+            cd ${{ secrets.EC2_PROJECT_DIR }}
+            docker stop nextjs-app || true
+            docker rm nextjs-app || true
+            docker build -t nextjs-app .
+            docker run -d -p 3000:3000 --name nextjs-app nextjs-app
