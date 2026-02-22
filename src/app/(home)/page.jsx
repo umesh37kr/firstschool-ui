@@ -8,6 +8,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import { IoWarning } from "react-icons/io5";
+import { motion } from "framer-motion";
+import { HiOutlineInformationCircle } from "react-icons/hi";
+import { FaLaptopCode } from "react-icons/fa";
 
 const testimonials = [
   {
@@ -334,9 +338,7 @@ export default function Home() {
                       <h3 className="mb-2 text-lg font-medium leading-6 text-gray-900">
                         Our Address
                       </h3>
-                      <p className="text-gray-600">
-                        1230 Maecenas Street Donec Road
-                      </p>
+                      <p className="text-gray-600">Dandai Road, Meral</p>
                       <p className="text-gray-600">Garhwa, Jharkhand</p>
                     </div>
                   </li>
@@ -363,7 +365,8 @@ export default function Home() {
                       <h3 className="mb-2 text-lg font-medium leading-6 text-gray-900">
                         Contact
                       </h3>
-                      <p className="text-gray-600">Mobile: +91-8569740025 </p>
+                      <p className="text-gray-600">Name: Umesh Kumar </p>
+                      <p className="text-gray-600">Mobile: +91-8310259800 </p>
                       <p className="text-gray-600">
                         Mail: firstschool@gmail.com
                       </p>
@@ -472,6 +475,81 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </section>
+      {/* warning school does not exist */}
+      <section className="py-5 bg-red-300">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="mt-14 max-w-4xl mx-auto px-4"
+        >
+          <div className="relative overflow-hidden rounded-3xl border border-gray-200 bg-gradient-to-br from-white to-gray-50 shadow-lg p-8">
+            {/* Heading */}
+            <div className="flex items-center gap-2 mb-4 text-red-600">
+              {/* Floating Icon */}
+              <motion.div
+                animate={{ x: [0, -8, 0] }}
+                transition={{
+                  repeat: Infinity,
+                  duration: 3,
+                  ease: "easeInOut",
+                }}
+                className="absolute top-5 right-5 bg-red-600 text-white p-2 rounded-full shadow-md"
+              >
+                <IoWarning size={22} />
+              </motion.div>
+              <HiOutlineInformationCircle size={22} />
+              <h3 className="text-lg font-semibold tracking-wide">
+                Demo Website Disclaimer
+              </h3>
+            </div>
+
+            {/* English Text */}
+            <p className="text-gray-700 text-sm leading-relaxed">
+              This is a demo school website created to showcase design and
+              features. The institution shown here does not exist.
+              <motion.span
+                animate={{ opacity: [0.4, 1, 0.4] }}
+                transition={{ repeat: Infinity, duration: 2 }}
+                className="font-medium text-gray-900 ml-1 bg-amber-500"
+              >
+                Contact us to build a custom website for your school or
+                business.
+              </motion.span>
+            </p>
+
+            <div className="my-5 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
+
+            {/* Hindi Text */}
+            <p className="text-gray-700 text-sm leading-relaxed">
+              यह एक डेमो स्कूल वेबसाइट है जिसे डिज़ाइन और फीचर्स दिखाने के लिए
+              बनाया गया है। यहाँ दिखाई गई संस्था वास्तविक नहीं है।
+              <motion.span
+                animate={{ x: [0, 6, 0] }}
+                transition={{ repeat: Infinity, duration: 2.5 }}
+                className="font-medium text-gray-900 ml-1 inline-block bg-amber-500"
+              >
+                अपने स्कूल या व्यवसाय के लिए कस्टम वेबसाइट बनवाने हेतु हमसे
+                संपर्क करें।
+              </motion.span>
+            </p>
+
+            {/* CTA */}
+            <div className="mt-8 flex justify-center">
+              <motion.a
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                href="/contact"
+                className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white text-sm font-medium px-6 py-3 rounded-full shadow-md transition"
+              >
+                <FaLaptopCode />
+                Build Your Website
+              </motion.a>
+            </div>
+          </div>
+        </motion.div>
       </section>
     </>
   );

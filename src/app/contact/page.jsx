@@ -97,9 +97,9 @@ const Contact = () => {
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                         className="h-6 w-6"
                       >
                         <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"></path>
@@ -110,9 +110,7 @@ const Contact = () => {
                       <h3 className="mb-2 text-lg font-medium leading-6 text-gray-900">
                         Our Address
                       </h3>
-                      <p className="text-gray-600">
-                        1230 Maecenas Street Donec Road
-                      </p>
+                      <p className="text-gray-600">Dandai Road, Meral</p>
                       <p className="text-gray-600">Garhwa, Jharkhand</p>
                     </div>
                   </li>
@@ -125,9 +123,9 @@ const Contact = () => {
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                         className="h-6 w-6"
                       >
                         <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2"></path>
@@ -139,7 +137,8 @@ const Contact = () => {
                       <h3 className="mb-2 text-lg font-medium leading-6 text-gray-900">
                         Contact
                       </h3>
-                      <p className="text-gray-600">Mobile: +91-8569740025 </p>
+                      <p className="text-gray-600">Name: Umesh Kumar </p>
+                      <p className="text-gray-600">Mobile: +91-8310259800 </p>
                       <p className="text-gray-600">
                         Mail: firstschool@gmail.com
                       </p>
@@ -154,9 +153,9 @@ const Contact = () => {
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                         className="h-6 w-6"
                       >
                         <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"></path>
@@ -184,13 +183,13 @@ const Contact = () => {
                     <div className="mx-0 mb-1 sm:mb-4">
                       <div className="mx-0 mb-1 sm:mb-4">
                         <label
-                          for="name"
+                          htmlFor="name"
                           className="pb-1 text-xs uppercase tracking-wider"
                         ></label>
                         <input
                           type="text"
                           id="name"
-                          autocomplete="given-name"
+                          autoComplete="given-name"
                           placeholder="Your name"
                           className="mb-2 w-full rounded-md border text-gray-700 border-gray-400 py-2 pl-2 pr-4 shadow-md sm:mb-0"
                           name="name"
@@ -201,13 +200,13 @@ const Contact = () => {
                       </div>
                       <div className="mx-0 mb-1 sm:mb-4">
                         <label
-                          for="mobile"
+                          htmlFor="mobile"
                           className="pb-1 text-xs uppercase tracking-wider"
                         ></label>
                         <input
                           type="mobile"
                           id="mobile"
-                          autocomplete="mobile"
+                          autoComplete="mobile"
                           placeholder="Your mobile number"
                           className="mb-2 w-full rounded-md border text-gray-700 border-gray-400 py-2 pl-2 pr-4 shadow-md sm:mb-0"
                           name="mobile"
@@ -219,7 +218,7 @@ const Contact = () => {
                     </div>
                     <div className="mx-0 mb-1 sm:mb-4">
                       <label
-                        for="message"
+                        htmlFor="message"
                         className="pb-1 text-xs uppercase tracking-wider"
                       ></label>
                       <textarea
