@@ -2,6 +2,25 @@
 import { useToast } from "@/hooks/use-toast";
 import React, { useState } from "react";
 
+// import { Metadata } from "next";
+
+// export const metadata = {
+//   title: "Contact First School Meral | School Admission Enquiry",
+//   description:
+//     "Contact First School Meral for admission details, school timings, and other enquiries. Call or visit our campus today.",
+//   keywords: [
+//     "Contact First School",
+//     "Umesh Kumar First School",
+//     "Umesh First School",
+//     "school contact number Meral",
+//     "school admission enquiry Meral",
+//     "First School address",
+//     "Umesh Kumar First School Meral",
+//     "Umesh Kumar Meral",
+//     "Meral Umesh Kumar",
+//   ],
+// };
+
 const Contact = () => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
@@ -139,9 +158,7 @@ const Contact = () => {
                       </h3>
                       <p className="text-gray-600">Name: Umesh Kumar </p>
                       <p className="text-gray-600">Mobile: +91-8310259800 </p>
-                      <p className="text-gray-600">
-                        Mail: firstschool@gmail.com
-                      </p>
+                      <p className="text-gray-600">Mail: umesh37kr@gmail.com</p>
                     </div>
                   </li>
                   <li className="flex">

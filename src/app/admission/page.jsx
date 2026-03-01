@@ -1,6 +1,24 @@
 import Image from "next/image";
 import React from "react";
 
+// import { Metadata } from "next";
+
+// export const metadata = {
+//   title: "Admission First School Meral | School Admission Enquiry",
+//   description:
+//     "Contact First School Meral for admission details, school timings, and other enquiries. Call or visit our campus today.",
+//   keywords: [
+//     "First School Umesh Kumar",
+//     "Admission First School",
+//     "Umesh Kumar First School Meral",
+//     "Umesh Kumar Meral",
+//     "Meral Umesh Kumar",
+//     "school admission open Meral",
+//     "school admission open Meral",
+//     "First School address",
+//   ],
+// };
+
 const Admissions = () => {
   return (
     <>

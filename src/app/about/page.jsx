@@ -1,6 +1,23 @@
 import Image from "next/image";
 import React from "react";
+// import { Metadata } from "next";
 
+// export const metadata = {
+//   title: "About First School | Leading School in Meral",
+//   description:
+//     "Learn about First School in Meral, our vision, mission, experienced faculty, and commitment to quality education.",
+//   keywords: [
+//     "About First School",
+//     "Umesh Kumar First School",
+//     "Umesh First School",
+//     "Umesh Kumar First School Meral",
+//     "Umesh Kumar Meral",
+//     "Meral Umesh Kumar",
+//     "First School Meral",
+//     "school education in Meral",
+//     "best school teachers in Meral",
+//   ],
+// };
 const About = () => {
   return (
     <>

@@ -1,4 +1,5 @@
 "use client";
+// import HomeClient from "./HomeClient";
 import { useToast } from "@/hooks/use-toast";
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -13,6 +14,23 @@ import { motion } from "framer-motion";
 import { HiOutlineInformationCircle } from "react-icons/hi";
 import { FaLaptopCode } from "react-icons/fa";
 
+// import { Metadata } from "next";
+
+// export const metadata = {
+//   title: "First School – Best School in Meral | English Medium Education",
+//   description:
+//     "First School is one of the best schools in Meral offering English medium education, experienced teachers, and modern facilities.",
+//   keywords: [
+//     "First School Meral",
+//     "Umesh Kumar First School Meral",
+//     "Umesh Kumar Meral",
+//     "Meral Umesh Kumar",
+//     "best school in Meral",
+//     "English medium school in Meral",
+//     "top school near Meral",
+//     "school admission in Meral",
+//   ],
+// };
 const testimonials = [
   {
     id: 1,
@@ -367,9 +385,7 @@ export default function Home() {
                       </h3>
                       <p className="text-gray-600">Name: Umesh Kumar </p>
                       <p className="text-gray-600">Mobile: +91-8310259800 </p>
-                      <p className="text-gray-600">
-                        Mail: firstschool@gmail.com
-                      </p>
+                      <p className="text-gray-600">Mail: umesh37kr@gmail.com</p>
                     </div>
                   </li>
                   <li className="flex">
