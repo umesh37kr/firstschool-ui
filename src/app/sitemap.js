@@ -2,26 +2,38 @@ export default function sitemap() {
   return [
     {
       url: "https://www.firstschools.in",
-      lastModified: new Date(),
+      lastModified: "2026-04-28",
       changeFrequency: "yearly",
       priority: 1,
     },
     {
       url: "https://www.firstschools.in/about",
-      lastModified: new Date(),
+      lastModified: "2026-04-28",
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       url: "https://www.firstschools.in/admission",
-      lastModified: new Date(),
+      lastModified: "2026-04-28",
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       url: "https://www.firstschools.in/contact",
-      lastModified: new Date(),
+      lastModified: "2026-04-28",
       changeFrequency: "weekly",
+      priority: 0.5,
+    },
+    {
+      url: "https://www.firstschools.in/noticeboard",
+      lastModified: "2026-04-28",
+      changeFrequency: "weekly",
+      priority: 0.5,
+    },
+    {
+      url: "https://www.firstschools.in/gallery",
+      lastModified: "2026-04-28",
+      changeFrequency: "monthly",
       priority: 0.5,
     },
   ];
