@@ -1,23 +1,23 @@
 import Image from "next/image";
 import React from "react";
-// import { Metadata } from "next";
+import { Metadata } from "next";
 
-// export const metadata = {
-//   title: "About First School | Leading School in Meral",
-//   description:
-//     "Learn about First School in Meral, our vision, mission, experienced faculty, and commitment to quality education.",
-//   keywords: [
-//     "About First School",
-//     "Umesh Kumar First School",
-//     "Umesh First School",
-//     "Umesh Kumar First School Meral",
-//     "Umesh Kumar Meral",
-//     "Meral Umesh Kumar",
-//     "First School Meral",
-//     "school education in Meral",
-//     "best school teachers in Meral",
-//   ],
-// };
+export const metadata = {
+  title: "About First School | Leading School in Meral",
+  description:
+    "Learn about First School in Meral, our vision, mission, experienced faculty, and commitment to quality education.",
+  keywords: [
+    "About First School",
+    "Umesh Kumar First School",
+    "Umesh First School",
+    "Umesh Kumar First School Meral",
+    "Umesh Kumar Meral",
+    "Meral Umesh Kumar",
+    "First School Meral",
+    "school education in Meral",
+    "best school teachers in Meral",
+  ],
+};
 const About = () => {
   return (
     <>
@@ -26,7 +26,7 @@ const About = () => {
           <h1 className="text-cyan-800 text-center text-pretty text-3xl font-semibold">
             Message from the Principal
           </h1>
-          <h2 class="my-4 font-bold text-2xl w-full p-2 text-white bg-orange-500 sm:text-4xl ">
+          <h2 className="my-4 font-bold text-2xl w-full p-2 text-white bg-orange-500 sm:text-4xl ">
             Shivani Gupta
           </h2>
           <p className="text-justify">
