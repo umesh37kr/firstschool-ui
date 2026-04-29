@@ -3,36 +3,46 @@ import React from "react";
 import { Metadata } from "next";
 
 export const metadata = {
-  title: "About First School | Leading School in Meral",
+  title: "About First School | Best School in Meral Jharkhand",
   description:
-    "Learn about First School in Meral, our vision, mission, experienced faculty, and commitment to quality education.",
+    "Know about First School Meral, our mission, vision, and experienced faculty led by Principal Shivani Gupta.",
   keywords: [
-    "About First School",
-    "Umesh Kumar First School",
-    "Umesh First School",
-    "Umesh Kumar First School Meral",
-    "Umesh Kumar Meral",
-    "Meral Umesh Kumar",
     "First School Meral",
-    "school education in Meral",
-    "best school teachers in Meral",
+    "Best school in Meral Jharkhand",
+    "First School principal Shivani Gupta",
+    "School in Meral Garhwa",
   ],
+  alternates: {
+    canonical: "https://www.firstschools.in/about",
+  },
+  openGraph: {
+    title: "About First School Meral",
+    description:
+      "Learn about First School Meral, our mission, vision, and leadership.",
+    url: "https://www.firstschools.in/about",
+    siteName: "First School",
+    type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 const About = () => {
   return (
     <>
       <section className="container bg-[#fcf9f9] py-5 min-h-full">
-        <div className="conatiner block">
-          <h1 className="text-cyan-800 text-center text-pretty text-3xl font-semibold">
+        <div className="container block">
+          <h2 className="text-cyan-800 text-center text-pretty text-3xl font-semibold">
             Message from the Principal
-          </h1>
+          </h2>
           <h2 className="my-4 font-bold text-2xl w-full p-2 text-white bg-orange-500 sm:text-4xl ">
             Shivani Gupta
           </h2>
           <p className="text-justify">
             <Image
               src="/principal.jpg"
-              alt="principal"
+              alt="Principal Shivani Gupta First School Meral"
               height={350}
               width={350}
               className="float-left mr-2"
@@ -60,7 +70,7 @@ const About = () => {
         </div>
         <div className="mt-10">
           <h2 className="bg-cyan-700 text-3xl font-semibold text-white p-2">
-            Our Mission & Vission
+            Our Mission & Vision
           </h2>
           <h3 className="font-semibold text-xl text-cyan-700 mt-8">
             <span className="border-b-2 border-orange-500">Our Mission -</span>
