@@ -32,6 +32,9 @@ const Header = () => {
           <Link className="hover:text-primary" href="/contact">
             Contact
           </Link>
+          <Link className="hover:text-primary" href="/blog">
+            Blog
+          </Link>
           <Button size="sm">
             <Link href="/login">Login</Link>
           </Button>
@@ -96,6 +99,11 @@ const Header = () => {
             <li>
               <Link className="hover:text-primary" href="/contact">
                 Contact
+              </Link>
+            </li>
+            <li>
+              <Link className="hover:text-primary" href="/blog">
+                Blog
               </Link>
             </li>
             <li>
